@@ -1,9 +1,17 @@
-import AdminPage from "./(dashboard)/admin/page"
+'use client';  // Ensure this is a client-side component
+
+import { useRouter } from 'next/navigation';  // Use next/navigation in the app directory
+import { useEffect } from 'react';
 
 const Homepage = () => {
-  return (
-    <AdminPage />
-  )
-}
+  const router = useRouter();  // Initialize the router
 
-export default Homepage
+  useEffect(() => {
+    // Navigate to /admin when the component mounts
+    router.push('/admin');
+  }, [router]);
+
+  return null;  // Since you're redirecting, nothing to render
+};
+
+export default Homepage;
